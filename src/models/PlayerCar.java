@@ -2,6 +2,8 @@ package models;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -15,6 +17,8 @@ public class PlayerCar {
 	public PlayerCar() {
 		this.x = 100;
 		this.y = 500;
+		
+
 	}
 	
 	public void load(){
@@ -36,19 +40,19 @@ public class PlayerCar {
 			x = 10;
 		}
 		
-		if( y >= 500) {
-			y = 500;
+		if( y >= 550) {
+			y = 550;
 		}
 		
-		if( y <= 300) {
-			y = 300;
+		if( y <= 400) {
+			y = 400;
 		}
 		
 	}
 	
 	public void keyPressed(KeyEvent key) {
 		int code = key.getKeyCode();
-		
+
 		if(code == KeyEvent.VK_UP) {
 			dy = -3;
 		}
@@ -90,6 +94,6 @@ public class PlayerCar {
 
 	public Image getImagem() {
 		return imagem;
-	}
+	}	
 	
 }

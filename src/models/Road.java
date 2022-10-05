@@ -4,7 +4,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class EntityCar {
+public class Road {
 	
 	private Image image;
 	private int x,y;
@@ -14,14 +14,14 @@ public class EntityCar {
 	
 	private static int VELOCIDADE = -2;
 	
-	public EntityCar(int x, int y) {
+	public Road(int x, int y) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;
 	}
 	
 	public void load() {
-		ImageIcon reference= new ImageIcon("assets/cars/Beetle.png");
+		ImageIcon reference= new ImageIcon("assets/scenario/Road.png");
 		image = reference.getImage();
 		
 		this.largura = image.getWidth(null);
@@ -30,6 +30,10 @@ public class EntityCar {
 	
 	public void update() {
 		this.x += VELOCIDADE;
+		
+		if(this.x <-1024) {
+			this.x = 1023;
+		}
 	}
 
 	public boolean isVisible() {
