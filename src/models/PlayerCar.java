@@ -15,13 +15,13 @@ public class PlayerCar {
 	private int altura, largura;
 	private Car car;
 	
-	public PlayerCar(Car car) {
+	public PlayerCar(Car car) {// esse construtor garante que o player será spawnado sempre no mesmo lugar
 		this.x = 100;
 		this.y = 500;
 		this.car = car;
 	}
 	
-	public void load(){
+	public void load(){// carrega a imagem do carro que o player irá correr
 		ImageIcon reference = new ImageIcon(car.getModel());
 		imagem = reference.getImage();
 		altura = imagem.getHeight(null);
@@ -50,19 +50,19 @@ public class PlayerCar {
 		
 	}
 	
-	public void keyPressed(KeyEvent key) {
+	public void keyPressed(KeyEvent key) {// captura eventos do teclado
 		int code = key.getKeyCode();
 
-		if(code == KeyEvent.VK_UP) {
+		if(code == KeyEvent.VK_UP) {// faz o carro se mover para cima
 			dy = -5;
 		}
-		if(code == KeyEvent.VK_DOWN) {
+		if(code == KeyEvent.VK_DOWN) {// faz o carro se mover para baixo
 			dy = 5;
 		}
-		if(code == KeyEvent.VK_LEFT) {
+		if(code == KeyEvent.VK_LEFT) {// faz o carro se mover para tras
 			dx = -3;
 		}
-		if(code == KeyEvent.VK_RIGHT) {
+		if(code == KeyEvent.VK_RIGHT) {// faz o carro se mover para frente
 			dx = 10;
 		}	
 	}

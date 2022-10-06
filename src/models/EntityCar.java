@@ -14,7 +14,7 @@ public class EntityCar {
 	
 	private double VELOCIDADE;
 	
-	public EntityCar(int x, int y, Car car, double velocidade) {
+	public EntityCar(int x, int y, Car car, double velocidade) {// esse construtor nos permite definir o tipo de carro e sua velocidade para tornar o jogo mais dinamico
 		this.x = x;
 		this.y = y;
 		isVisible = true;
@@ -22,7 +22,7 @@ public class EntityCar {
 		this.VELOCIDADE = velocidade * -1;
 	}
 	
-	public void load() {
+	public void load() {// carrega a imagem do carro que sera usado
 		ImageIcon reference= new ImageIcon(car.getModel());
 		image = reference.getImage();
 		

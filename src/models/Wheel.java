@@ -23,10 +23,6 @@ public class Wheel {
 		return aderencia;
 	}
 
-	public void setAderencia(int aderencia) {
-		this.aderencia = aderencia;
-	}
-
 	public int getAro() {
 		return aro;
 	}

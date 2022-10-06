@@ -10,23 +10,23 @@ public class Scenarios {
 	private int x,y;
 	private int altura, largura;
 	private boolean isVisible;
-	private String[] buildings = {
+	private String[] buildings = {// path das imagens que irão renderizar as construções
 			"assets/scenario/bank.png",	
 			"assets/scenario/casa sprite 1.png",	
 			"assets/scenario/building.png",	
 	};
 	private String build;
 	
-	private static int VELOCIDADE = -8;
+	private static int VELOCIDADE = -8;// velocidade deve ser a mesma que a da Road
 	
 	public Scenarios(int x, int y, int build) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;
-		this.build = buildings[build];
+		this.build = buildings[build];// pega o path da imagem que sera utilizado na classe de simulador para setar o tipo de construção
 	}
 	
-	public void load() {
+	public void load() {// funçao que irá carregar a imagem, que sera usada para desenhar na tela
 		ImageIcon reference= new ImageIcon(build);
 		image = reference.getImage();
 		
@@ -34,7 +34,7 @@ public class Scenarios {
 		this.altura = image.getHeight(null);
 	}
 	
-	public void update() {
+	public void update() {// faz a movimentação do elemento na tela
 		this.x += VELOCIDADE;
 	}
 

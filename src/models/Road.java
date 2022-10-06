@@ -19,7 +19,7 @@ public class Road {
 		isVisible = true;
 	}
 	
-	public void load() {
+	public void load() {// carrega a imagem que sera usada para desenhar a pista
 		ImageIcon reference= new ImageIcon("assets/scenario/Road.png");
 		image = reference.getImage();
 		
@@ -30,8 +30,8 @@ public class Road {
 	public void update() {
 		this.x += VELOCIDADE;
 		
-		if(this.x <-1023) {
-			this.x = 1023;
+		if(this.x <-1023) {// com isso nao precisamos criar uma estrada GIANTESCA e permitimos um looping da estrada
+			this.x = 1023;// sempre que ela chegar no seu limite da tela ela volta para o inicio, com isso precisamos apenas de duas estradas que ficam em um looping infinito e tornando o jogo sem limites
 		}
 	}
 

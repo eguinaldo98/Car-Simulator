@@ -25,7 +25,7 @@ public class Car {
 	private String model;
 	private float gas;
 	
-	public Car(int id, int potencia, int motor, int model) {
+	public Car(int id, int potencia, int motor, int model) {// o carro será gerado sempre com pré definiçoes, com IPVA, abastecido e calibrado pronto para rodar
 		this.id = id;
 		this.motor = motor;
 		this.model = aparencias[model];
@@ -62,32 +62,18 @@ public class Car {
 		return de;
 	}
 
-	public void setDe(Wheel de) {
-		this.de = de;
-	}
-
 	public Wheel getDd() {
 		return dd;
 	}
 
-	public void setDd(Wheel dd) {
-		this.dd = dd;
-	}
 
 	public Wheel getTe() {
 		return te;
 	}
 
-	public void setTe(Wheel te) {
-		this.te = te;
-	}
 
 	public Wheel getTd() {
 		return td;
-	}
-
-	public void setTd(Wheel td) {
-		this.td = td;
 	}
 
 	public float getGas() {
@@ -101,7 +87,5 @@ public class Car {
 	public String getModel() {
 		return model;
 	}
-	
-	
-	
+		
 }
