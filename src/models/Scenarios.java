@@ -10,17 +10,24 @@ public class Scenarios {
 	private int x,y;
 	private int altura, largura;
 	private boolean isVisible;
+	private String[] buildings = {
+			"assets/scenario/bank.png",	
+			"assets/scenario/casa sprite 1.png",	
+			"assets/scenario/building.png",	
+	};
+	private String build;
 	
 	private static int VELOCIDADE = -8;
 	
-	public Scenarios(int x, int y) {
+	public Scenarios(int x, int y, int build) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;
+		this.build = buildings[build];
 	}
 	
 	public void load() {
-		ImageIcon reference= new ImageIcon("assets/scenario/Road.png");
+		ImageIcon reference= new ImageIcon(build);
 		image = reference.getImage();
 		
 		this.largura = image.getWidth(null);
@@ -29,10 +36,6 @@ public class Scenarios {
 	
 	public void update() {
 		this.x += VELOCIDADE;
-		
-		if(this.x <-1023) {
-			this.x = 1023;
-		}
 	}
 
 	public boolean isVisible() {

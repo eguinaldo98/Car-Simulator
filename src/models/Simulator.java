@@ -20,6 +20,7 @@ public class Simulator extends JPanel implements ActionListener {
 	private PlayerCar player;
 	private Timer timer;
 	private List <EntityCar> entity;
+	private List <Scenarios> build;
 	private Road road1, road2;
 	private int lastCoordenate;
 	
@@ -42,6 +43,7 @@ public class Simulator extends JPanel implements ActionListener {
 		timer.start();
 		
 		inicializeEntity();
+		inicializeBuild();
 		
 	}
 	
@@ -66,6 +68,20 @@ public class Simulator extends JPanel implements ActionListener {
 
 	}
 	
+	public void inicializeBuild() {
+		int BuildValue [] = new int[400];
+		build = new ArrayList<Scenarios>();
+		
+		for(int i = 1; i <= BuildValue.length; i++) {
+			
+			int x =  i * 300;
+			int y = (int) (23);
+			int j = (int) (Math.random() * 3);
+			build.add(new Scenarios(x,y,j));
+		}
+
+	}
+	
 	public void paint(Graphics g) {
 		Graphics2D graficos = (Graphics2D) g;
 		graficos.drawImage(background, 0, 0, null);
@@ -74,6 +90,12 @@ public class Simulator extends JPanel implements ActionListener {
 		
 		for(int j = 0; j < entity.size(); j++) {
 			EntityCar en = entity.get(j);
+			en.load();
+			graficos.drawImage(en.getImage(), en.getX(), en.getY(), this);
+		}
+		
+		for(int j = 0; j < build.size(); j++) {
+			Scenarios en = build.get(j);
 			en.load();
 			graficos.drawImage(en.getImage(), en.getX(), en.getY(), this);
 		}
@@ -94,6 +116,16 @@ public class Simulator extends JPanel implements ActionListener {
 				en.update();
 			}else {
 				entity.remove(j);
+			}
+			
+		}
+		
+		for(int j = 0; j < build.size(); j++) {
+			Scenarios en = build.get(j);
+			if(en.isVisible()) {
+				en.update();
+			}else {
+				build.remove(j);
 			}
 			
 		}

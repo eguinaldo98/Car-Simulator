@@ -40,12 +40,12 @@ public class PlayerCar {
 			x = 10;
 		}
 		
-		if( y >= 530) {
-			y = 530;
+		if( y >= 524) {
+			y = 525;
 		}
 		
-		if( y <= 425) {
-			y = 425;
+		if( y <= 355) {
+			y = 355;
 		}
 		
 	}
