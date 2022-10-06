@@ -38,7 +38,7 @@ public class Simulator extends JPanel implements ActionListener {
 		road2.load();
 		
 		addKeyListener(new TecladoAdapter());
-		timer = new Timer(10, this);
+		timer = new Timer(15, this);
 		timer.start();
 		
 		inicializeEntity();
@@ -55,13 +55,13 @@ public class Simulator extends JPanel implements ActionListener {
 			int y = (int) (423);
 			int model = (int) (Math.random() * 8 - 1);
 			Car car =  new Car(1, 230, 2, model);;
-			entity.add(new EntityCar(x, y, car, 1));
+			entity.add(new EntityCar(x, y, car, 2));
 			
-			int x2 = (int) (Math.random() * 400 + 1024 + (i * 500));
+			int x2 = (int) (Math.random() * 1000 + 1024 + (i * 2000));
 			int y2 = (int) (500);
 			int model2 = (int) (Math.random() * 8 - 1);
 			Car car2 = new Car(1, 230, 2, model2);
-			entity.add(new EntityCar(x2+(i*10), y2, car2, 5));
+			entity.add(new EntityCar(x2+(i*10), y2, car2, 6));
 		}
 
 	}
@@ -108,12 +108,10 @@ public class Simulator extends JPanel implements ActionListener {
 			player.keyPressed(e);
 			int code = e.getKeyCode();
 			if(code == KeyEvent.VK_RIGHT) {
-				 if(player.getX() <= 11) {
-					 timer.setDelay(3);;
-				 }
+					 timer.setDelay(15);
 			}
 			if(code == KeyEvent.VK_LEFT) {
-				 timer.setDelay(20);
+				 timer.setDelay(30);
 			}
 		}
 		@Override
@@ -122,10 +120,10 @@ public class Simulator extends JPanel implements ActionListener {
 			
 			int code = e.getKeyCode();
 			if(code == KeyEvent.VK_RIGHT) {
-				 timer.setDelay(5);;
+				 timer.setDelay(20);;
 			}
 			if(code == KeyEvent.VK_LEFT) {
-				 timer.setDelay(5);;
+				 timer.setDelay(20);;
 			}
 		}
 	}

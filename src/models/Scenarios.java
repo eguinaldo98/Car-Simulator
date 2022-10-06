@@ -4,7 +4,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class Road {
+public class Scenarios {
 	
 	private Image image;
 	private int x,y;
@@ -13,7 +13,7 @@ public class Road {
 	
 	private static int VELOCIDADE = -8;
 	
-	public Road(int x, int y) {
+	public Scenarios(int x, int y) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;

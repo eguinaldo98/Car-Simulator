@@ -32,8 +32,8 @@ public class PlayerCar {
 		x += dx;
 		y += dy;
 		
-		if( x >= 500) {
-			x = 500;
+		if( x >= 650) {
+			x = 650;
 		}
 		
 		if( x <= 10) {
@@ -54,16 +54,16 @@ public class PlayerCar {
 		int code = key.getKeyCode();
 
 		if(code == KeyEvent.VK_UP) {
-			dy = -3;
+			dy = -5;
 		}
 		if(code == KeyEvent.VK_DOWN) {
-			dy = 3;
+			dy = 5;
 		}
 		if(code == KeyEvent.VK_LEFT) {
 			dx = -3;
 		}
 		if(code == KeyEvent.VK_RIGHT) {
-			dx = 3;
+			dx = 10;
 		}	
 	}
 	

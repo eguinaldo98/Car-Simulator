@@ -7,14 +7,14 @@ import javax.swing.ImageIcon;
 public class EntityCar {
 	
 	private Image image;
-	private int x,y;
+	private double x,y;
 	private int altura, largura;
 	private boolean isVisible;
 	private Car car;
 	
-	private int VELOCIDADE;
+	private double VELOCIDADE;
 	
-	public EntityCar(int x, int y, Car car, int velocidade) {
+	public EntityCar(int x, int y, Car car, double velocidade) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;
@@ -43,7 +43,7 @@ public class EntityCar {
 	}
 
 	public int getVELOCIDADE() {
-		return VELOCIDADE;
+		return (int) VELOCIDADE;
 	}
 
 	public void setVELOCIDADE(int vELOCIDADE) {
@@ -55,11 +55,11 @@ public class EntityCar {
 	}
 
 	public int getX() {
-		return x;
+		return (int) x;
 	}
 
 	public int getY() {
-		return y;
+		return (int) y;
 	}
 	
 }
