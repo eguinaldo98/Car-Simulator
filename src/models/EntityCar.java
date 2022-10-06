@@ -10,18 +10,20 @@ public class EntityCar {
 	private int x,y;
 	private int altura, largura;
 	private boolean isVisible;
+	private Car car;
 	
+	private int VELOCIDADE;
 	
-	private static int VELOCIDADE = -2;
-	
-	public EntityCar(int x, int y) {
+	public EntityCar(int x, int y, Car car, int velocidade) {
 		this.x = x;
 		this.y = y;
 		isVisible = true;
+		this.car = car;
+		this.VELOCIDADE = velocidade * -1;
 	}
 	
 	public void load() {
-		ImageIcon reference= new ImageIcon("assets/cars/Beetle.png");
+		ImageIcon reference= new ImageIcon(car.getModel());
 		image = reference.getImage();
 		
 		this.largura = image.getWidth(null);
@@ -40,11 +42,11 @@ public class EntityCar {
 		this.isVisible = isVisible;
 	}
 
-	public static int getVELOCIDADE() {
+	public int getVELOCIDADE() {
 		return VELOCIDADE;
 	}
 
-	public static void setVELOCIDADE(int vELOCIDADE) {
+	public void setVELOCIDADE(int vELOCIDADE) {
 		VELOCIDADE = vELOCIDADE;
 	}
 

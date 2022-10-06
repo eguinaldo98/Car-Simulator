@@ -13,16 +13,16 @@ public class PlayerCar {
 	private int dx,dy;
 	private Image imagem;
 	private int altura, largura;
+	private Car car;
 	
-	public PlayerCar() {
+	public PlayerCar(Car car) {
 		this.x = 100;
 		this.y = 500;
-		
-
+		this.car = car;
 	}
 	
 	public void load(){
-		ImageIcon reference = new ImageIcon("assets/cars/sportive-black-car.png");
+		ImageIcon reference = new ImageIcon(car.getModel());
 		imagem = reference.getImage();
 		altura = imagem.getHeight(null);
 		largura = imagem.getWidth(null);
@@ -40,12 +40,12 @@ public class PlayerCar {
 			x = 10;
 		}
 		
-		if( y >= 550) {
-			y = 550;
+		if( y >= 530) {
+			y = 530;
 		}
 		
-		if( y <= 400) {
-			y = 400;
+		if( y <= 425) {
+			y = 425;
 		}
 		
 	}

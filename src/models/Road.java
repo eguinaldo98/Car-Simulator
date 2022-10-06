@@ -12,7 +12,7 @@ public class Road {
 	private boolean isVisible;
 	
 	
-	private static int VELOCIDADE = -2;
+	private static int VELOCIDADE = -5;
 	
 	public Road(int x, int y) {
 		this.x = x;
