@@ -8,7 +8,6 @@ public class EntityCar {
 	
 	private Image image;
 	private double x,y;
-	private int altura, largura;
 	private boolean isVisible;
 	private Car car;
 	
@@ -26,8 +25,6 @@ public class EntityCar {
 		ImageIcon reference= new ImageIcon(car.getModel());
 		image = reference.getImage();
 		
-		this.largura = image.getWidth(null);
-		this.altura = image.getHeight(null);
 	}
 	
 	public void update() {

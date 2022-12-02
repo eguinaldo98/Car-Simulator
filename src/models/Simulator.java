@@ -30,7 +30,7 @@ public class Simulator extends JPanel implements ActionListener {
 		ImageIcon reference = new ImageIcon("assets/scenario/background.png"); 
 		background = reference.getImage();
 		
-		player = new PlayerCar(new Car(1, 230, 2, 2));
+		player = new PlayerCar(2);
 		road1 = new Road(0,0);
 		road2 = new Road(1024,0);
 		player.load();
@@ -55,13 +55,13 @@ public class Simulator extends JPanel implements ActionListener {
 			int x = (int) (Math.random() * 400 + 1024 + (i * 500));// posição na qual o carro será gerado no eixo x e garante que eles nao serao sobrepostos
 			int y = (int) (423); // garante que o carro seá gerado na mesma altura ficando sempre na pista
 			int model = (int) (Math.random() * 8 - 1);// escolhe um dos tipos de carro
-			Car car =  new Car(1, 230, 2, model);;
+			Car car =  new Car(model);;
 			entity.add(new EntityCar(x, y, car, 2));// adiona o carro na lista
 			
 			int x2 = (int) (Math.random() * 1000 + 1024 + (i * 2000));
 			int y2 = (int) (500);
 			int model2 = (int) (Math.random() * 8 - 1);
-			Car car2 = new Car(1, 230, 2, model2);
+			Car car2 = new Car(model2);
 			entity.add(new EntityCar(x2+(i*10), y2, car2, 6));
 		}
 

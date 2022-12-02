@@ -8,7 +8,6 @@ public class Road {
 	
 	private Image image;
 	private int x,y;
-	private int altura, largura;
 	private boolean isVisible;
 	
 	private static int VELOCIDADE = -8;
@@ -22,9 +21,6 @@ public class Road {
 	public void load() {// carrega a imagem que sera usada para desenhar a pista
 		ImageIcon reference= new ImageIcon("assets/scenario/Road.png");
 		image = reference.getImage();
-		
-		this.largura = image.getWidth(null);
-		this.altura = image.getHeight(null);
 	}
 	
 	public void update() {

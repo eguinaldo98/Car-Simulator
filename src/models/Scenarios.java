@@ -8,7 +8,6 @@ public class Scenarios {
 	
 	private Image image;
 	private int x,y;
-	private int altura, largura;
 	private boolean isVisible;
 	private String[] buildings = {// path das imagens que irão renderizar as construções
 			"assets/scenario/bank.png",	
@@ -29,9 +28,6 @@ public class Scenarios {
 	public void load() {// funçao que irá carregar a imagem, que sera usada para desenhar na tela
 		ImageIcon reference= new ImageIcon(build);
 		image = reference.getImage();
-		
-		this.largura = image.getWidth(null);
-		this.altura = image.getHeight(null);
 	}
 	
 	public void update() {// faz a movimentação do elemento na tela

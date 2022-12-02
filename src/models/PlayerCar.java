@@ -2,30 +2,25 @@ package models;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 
-public class PlayerCar {
+public class PlayerCar extends Car{
 	
 	private int x,y;
 	private int dx,dy;
 	private Image imagem;
-	private int altura, largura;
-	private Car car;
 	
-	public PlayerCar(Car car) {// esse construtor garante que o player será spawnado sempre no mesmo lugar
+	public PlayerCar(int model) {// esse construtor garante que o player será spawnado sempre no mesmo lugar
+		super(model);
 		this.x = 100;
 		this.y = 500;
-		this.car = car;
+
 	}
 	
 	public void load(){// carrega a imagem do carro que o player irá correr
-		ImageIcon reference = new ImageIcon(car.getModel());
+		ImageIcon reference = new ImageIcon(super.getModel());
 		imagem = reference.getImage();
-		altura = imagem.getHeight(null);
-		largura = imagem.getWidth(null);
 	}	
 	
 	public void update(){
